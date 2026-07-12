@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>GLPI 10 — Ioen Le Gourlay-Denis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="bg-canvas" aria-hidden="true"><div class="bg-blob b1"></div><div class="bg-blob b2"></div><div class="bg-blob b3"></div><div class="bg-noise"></div></div>
+<nav class="site-nav" id="nav"><div class="nav-pill">
+  <a href="index.html" class="nav-logo">ILG<em>D</em></a>
+  <div class="nav-links"><a href="index.html#projets" class="nav-a" data-fr="← Projets" data-en="← Projects">← Projets</a><a href="index.html#contact" class="nav-a">Contact</a></div>
+  <select class="lang-select" id="langSelect" aria-label="Changer la langue">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+      <option value="de">DE</option>
+      <option value="pt">PT</option>
+      <option value="it">IT</option>
+      <option value="br">BR</option>
+      <option value="sv">SV</option>
+      <option value="nl">NL</option>
+      <option value="pl">PL</option>
+    </select>
+  <button class="burger" id="burger"><span></span><span></span></button>
+</div></nav>
+<div class="container" style="max-width:680px; margin-top: 90px;"></div>
+<div class="mobile-drawer glass" id="drawer">
+  <a href="index.html">Accueil</a>
+  <a href="index.html#projets">Projets</a>
+  <a href="cv.html"   class="nav-a" data-fr="CV"          data-en="CV">CV</a>
+  <a href="veilletechnologique.html"   class="nav-a" data-fr="Veille"          data-en="Tech Watch">Veille</a>
+</div>
+<main class="proj-detail-page"><div class="container">
+  <div class="proj-detail-hero ios-anim" data-d="0">
+    <span class="eyebrow">Gestion de parc & Ticketing</span>
+    <h1>GLPI 10</h1>
+    <p class="meta">Installation sur Debian 12 — Stack LAMP — BTS SIO SISR</p>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="60"><h2>Prérequis</h2>
+    <ul><li>Debian 12 fraîchement installée (VM ou physique)</li><li>PHP ≥ 8.2 + extensions : curl, gd, intl, mysql, zip, bcmath, mbstring, xml, bz2</li><li>MariaDB ≥ 10.6 ou MySQL ≥ 8.0</li></ul>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="100"><h2>Installation des paquets</h2>
+    <pre>sudo apt update && sudo apt upgrade -y
+sudo apt install apache2 php8.2-fpm mariadb-server
+sudo apt install php8.2-{curl,gd,intl,mysql,zip,bcmath,mbstring,xml,bz2} -y</pre>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="140"><h2>Configuration MariaDB</h2>
+    <pre>sudo mariadb-secure-installation
+sudo mysql -u root -p
+CREATE DATABASE db_glpi CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE USER 'glpi_adm'@'localhost' IDENTIFIED BY 'MotDePasseFort!';
+GRANT ALL PRIVILEGES ON db_glpi.* TO 'glpi_adm'@'localhost';
+FLUSH PRIVILEGES; EXIT;</pre>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="180"><h2>Téléchargement GLPI</h2>
+    <pre>cd /tmp
+wget https://github.com/glpi-project/glpi/releases/download/10.0.16/glpi-10.0.16.tgz
+sudo tar -xzvf glpi-10.0.16.tgz -C /var/www/
+sudo chown -R www-data:www-data /var/www/glpi</pre>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="220"><h2>VirtualHost Apache</h2>
+    <pre>&lt;VirtualHost *:80&gt;
+    ServerName glpi.mon-domaine.fr
+    DocumentRoot /var/www/glpi/public
+    &lt;Directory /var/www/glpi/public&gt;
+        AllowOverride All
+        Require all granted
+        RewriteEngine On
+    &lt;/Directory&gt;
+    &lt;FilesMatch \.php$&gt;
+        SetHandler "proxy:unix:/run/php/php8.2-fpm.sock|fcgi://localhost/"
+    &lt;/FilesMatch&gt;
+&lt;/VirtualHost&gt;</pre>
+    <pre>sudo a2ensite glpi.conf && sudo a2enmod rewrite proxy_fcgi setenvif
+sudo systemctl restart apache2 php8.2-fpm</pre>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="260"><h2>Finalisation</h2>
+    <ul><li>Accéder à http://IP_DU_SERVEUR → suivre l'assistant</li><li>Connexion par défaut : <code>glpi / glpi</code> → changer immédiatement</li><li>Supprimer le fichier d'install : <code>sudo rm /var/www/glpi/install/install.php</code></li><li>En production : ajouter HTTPS (Let's Encrypt), UFW, backups</li></ul>
+  </div>
+</div></main>
+<footer class="site-footer"><div class="footer-inner"><span>© 2026 Ioen Le Gourlay-Denis</span><a href="mentions-legales.html">Mentions légales</a></div></footer>
+<script src="script.js"></script>
+</body></html>

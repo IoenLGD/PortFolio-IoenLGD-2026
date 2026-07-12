@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Active Directory — Ioen Le Gourlay-Denis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="bg-canvas" aria-hidden="true"><div class="bg-blob b1"></div><div class="bg-blob b2"></div><div class="bg-blob b3"></div><div class="bg-noise"></div></div>
+<nav class="site-nav" id="nav"><div class="nav-pill">
+  <a href="index.html" class="nav-logo">ILG<em>D</em></a>
+  <div class="nav-links"><a href="index.html#projets" class="nav-a" data-fr="← Projets" data-en="← Projects">← Projets</a><a href="index.html#contact" class="nav-a">Contact</a></div>
+  <select class="lang-select" id="langSelect" aria-label="Changer la langue">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+      <option value="es">ES</option>
+      <option value="de">DE</option>
+      <option value="pt">PT</option>
+      <option value="it">IT</option>
+      <option value="br">BR</option>
+      <option value="sv">SV</option>
+      <option value="nl">NL</option>
+      <option value="pl">PL</option>
+    </select>
+  <button class="burger" id="burger"><span></span><span></span></button>
+</div></nav>
+<div class="container" style="max-width:680px; margin-top: 90px;"></div>
+<div class="mobile-drawer glass" id="drawer">
+  <a href="index.html">Accueil</a>
+  <a href="index.html#projets">Projets</a>
+  <a href="cv.html"   class="nav-a" data-fr="CV"          data-en="CV">CV</a>
+  <a href="veilletechnologique.html"   class="nav-a" data-fr="Veille"          data-en="Tech Watch">Veille</a>
+</div>
+<main class="proj-detail-page"><div class="container">
+  <div class="proj-detail-hero ios-anim" data-d="0">
+    <span class="eyebrow">Windows Server</span>
+    <h1>Active Directory</h1>
+    <p class="meta">Environnement de test VirtualBox — BTS SIO SISR</p>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="60"><h2>Préparation</h2>
+    <ul><li>Adresses IP statiques sur serveur et client</li><li>Désactiver IPv6 et pare-feu (environnement de test)</li><li>Tester la connectivité Ping entre machines</li><li>Installer VirtualBox Guest Additions</li></ul>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="100"><h2>Installation AD DS + DNS</h2>
+    <ul><li>Ajouter le rôle "Active Directory Domain Services" via le Gestionnaire de serveur</li><li>Promouvoir en contrôleur de domaine → Nouvelle forêt (ex. wsrv.labo)</li><li>Créer un compte admin dédié (ex. admin_AD)</li></ul>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="140"><h2>Utilisateurs et rattachement</h2>
+    <ul><li>Créer un utilisateur test (ex. BTSSIO / Passw0rd)</li><li>Rattacher le poste client au domaine → Redémarrer</li></ul>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="180"><h2>Structure OU, Groupes, GPO</h2>
+    <ul><li>Créer OU société → sous-OU par service</li><li>Groupes : Sécurité / Distribution (Global, Universel…)</li><li>GPO : mappage lecteurs, fond d'écran, redirection dossiers</li></ul>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="220"><h2>Profils et scripts</h2>
+    <ul><li>Profils itinérants / obligatoires</li><li>Scripts de connexion (.bat) dans SYSVOL\Scripts</li></ul>
+  </div>
+  <div class="glass detail-card ios-anim" data-d="260"><h2>Bonnes pratiques</h2>
+    <ul><li>Politique mots de passe stricte</li><li>Désactiver les comptes inactifs</li><li>Surveiller les journaux + <code>gpupdate /force</code></li></ul>
+  </div>
+</div></main>
+<footer class="site-footer"><div class="footer-inner"><span>© 2026 Ioen Le Gourlay-Denis</span><a href="mentions-legales.html">Mentions légales</a></div></footer>
+<script src="script.js"></script>
+</body></html>
