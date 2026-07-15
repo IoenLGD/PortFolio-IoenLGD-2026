@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>PRTG Network Monitor — Ioen Le Gourlay-Denis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<div class="bg-canvas" aria-hidden="true">
+  <div class="bg-blob b1"></div><div class="bg-blob b2"></div><div class="bg-blob b3"></div>
+  <div class="bg-noise"></div>
+</div>
+<nav class="site-nav" id="nav">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-logo">ILG<em>D</em></a>
+    <div class="nav-links">
+      <a href="index.html#projets" class="nav-a" data-fr="← Projets" data-en="← Projects">← Projets</a>
+      <a href="index.html#contact" class="nav-a" data-fr="Contact" data-en="Contact">Contact</a>
+    </div>
+    <select class="lang-select" id="langSelect" aria-label="Changer la langue">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="de">Deutsch</option>
+      <option value="pt">Português</option>
+      <option value="it">Italiano</option>
+      <option value="br">Brezhoneg</option>
+      <option value="sv">Svenska</option>
+      <option value="nl">Nederlands</option>
+      <option value="pl">Polski</option>
+    </select>
+    <label class="theme-toggle" id="themeToggle" aria-label="Basculer le mode sombre">
+      <input type="checkbox" id="themeCheckbox">
+      <span class="theme-track">
+        <span class="theme-thumb">
+          <svg class="icon-sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="4.2" fill="#fff"/>
+            <g stroke="#fff" stroke-width="1.7" stroke-linecap="round">
+              <line x1="12" y1="1.8" x2="12" y2="4.2"/>
+              <line x1="12" y1="19.8" x2="12" y2="22.2"/>
+              <line x1="1.8" y1="12" x2="4.2" y2="12"/>
+              <line x1="19.8" y1="12" x2="22.2" y2="12"/>
+              <line x1="4.4" y1="4.4" x2="6.1" y2="6.1"/>
+              <line x1="17.9" y1="17.9" x2="19.6" y2="19.6"/>
+              <line x1="4.4" y1="19.6" x2="6.1" y2="17.9"/>
+              <line x1="17.9" y1="6.1" x2="19.6" y2="4.4"/>
+            </g>
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.2 14.9A8.4 8.4 0 1 1 9.6 4.3a6.7 6.7 0 0 0 10.6 10.6z" fill="#000"/>
+          </svg>
+        </span>
+      </span>
+    </label>
+    <button class="burger" id="burger"><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-drawer glass" id="drawer">
+  <a href="index.html" data-fr="Accueil" data-en="Home">Accueil</a>
+  <a href="index.html#projets" data-fr="Projets" data-en="Projects">Projets</a>
+  <a href="index.html#contact" data-fr="Contact" data-en="Contact">Contact</a>
+</div>
+
+<main class="proj-detail-page">
+  <div class="container">
+    <div class="container" style="max-width:680px; margin-top: 90px;"></div>
+    <div class="proj-detail-hero ios-anim" data-d="0">
+      <span class="eyebrow" data-fr="Supervision Réseau" data-en="Network Monitoring">Supervision Réseau</span>
+      <h1>PRTG Network Monitor</h1>
+      <p class="meta" data-fr="Stage BTS SIO SISR · Saint Joseph la Salle, Lorient · Janv.–Mars 2026<br>Réalisé avec : ELBASAN Kendal, DECOURT Enzo" data-en="BTS SIO SISR Internship · Saint Joseph la Salle, Lorient · Jan.–Mar. 2026<br>With: ELBASAN Kendal, DECOURT Enzo">Stage BTS SIO SISR · Saint Joseph la Salle, Lorient · Janv.–Mars 2026<br>Réalisé avec : ELBASAN Kendal, DECOURT Enzo</p>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="60">
+      <h2 data-fr="Qu'est-ce que PRTG ?" data-en="What is PRTG?">Qu'est-ce que PRTG ?</h2>
+      <p data-fr="PRTG (Paessler Router Traffic Grapher) est un logiciel de supervision réseau tout-en-un sans agent. Il surveille en temps réel l'état, la disponibilité et les performances d'une infrastructure IT." data-en="PRTG (Paessler Router Traffic Grapher) is an all-in-one agentless network monitoring tool. It monitors the status, availability and performance of an IT infrastructure in real time.">PRTG (Paessler Router Traffic Grapher) est un logiciel de supervision réseau tout-en-un sans agent. Il surveille en temps réel l'état, la disponibilité et les performances d'une infrastructure IT.</p>
+      <ul>
+        <li data-fr="Détecter les pannes ou anomalies avant impact utilisateur" data-en="Detect failures or anomalies before user impact">Détecter les pannes ou anomalies avant impact utilisateur</li>
+        <li data-fr="Analyser les performances (CPU, RAM, bande passante, latence…)" data-en="Analyse performance (CPU, RAM, bandwidth, latency…)">Analyser les performances (CPU, RAM, bande passante, latence…)</li>
+        <li data-fr="Prévenir les incidents via alertes (email, push…)" data-en="Prevent incidents via alerts (email, push…)">Prévenir les incidents via alertes (email, push…)</li>
+        <li data-fr="Produire graphiques, rapports et tableaux de bord" data-en="Generate charts, reports and dashboards">Produire graphiques, rapports et tableaux de bord</li>
+      </ul>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="100">
+      <h2 data-fr="Fonctionnement de base" data-en="How it works">Fonctionnement de base</h2>
+      <p data-fr="PRTG repose sur une hiérarchie :" data-en="PRTG is based on a hierarchy:">PRTG repose sur une hiérarchie :</p>
+      <ul>
+        <li><strong data-fr="Groupe" data-en="Group">Groupe</strong> — <span data-fr="catégorie (ex. Réseau, Serveurs)" data-en="category (e.g. Network, Servers)">catégorie (ex. Réseau, Serveurs)</span></li>
+        <li><strong data-fr="Appareil (Device)" data-en="Device">Appareil (Device)</strong> — <span data-fr="machine/équipement (IP ou nom DNS)" data-en="machine/equipment (IP or DNS name)">machine/équipement (IP ou nom DNS)</span></li>
+        <li><strong data-fr="Capteur (Sensor)" data-en="Sensor">Capteur (Sensor)</strong> — <span data-fr="élément surveillé (Ping, CPU, trafic…)" data-en="monitored element (Ping, CPU, traffic…)">élément surveillé (Ping, CPU, trafic…)</span></li>
+      </ul>
+      <p data-fr="Protocoles : Ping, SNMP, WMI (Windows), SSH (Linux), HTTP/HTTPS, NetFlow/sFlow…" data-en="Protocols: Ping, SNMP, WMI (Windows), SSH (Linux), HTTP/HTTPS, NetFlow/sFlow…">Protocoles : Ping, SNMP, WMI (Windows), SSH (Linux), HTTP/HTTPS, NetFlow/sFlow…</p>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="140">
+      <h2 data-fr="Installation (Windows)" data-en="Installation (Windows)">Installation (Windows)</h2>
+      <p data-fr="PRTG s'installe uniquement sur Windows (10/11 ou Server 2016+)." data-en="PRTG installs only on Windows (10/11 or Server 2016+).">PRTG s'installe uniquement sur Windows (10/11 ou Server 2016+).</p>
+      <ol>
+        <li data-fr="Télécharger la version Free (100 capteurs) sur le site officiel Paessler" data-en="Download the Free version (100 sensors) from the official Paessler site">Télécharger la version Free (100 capteurs) sur le site officiel Paessler</li>
+        <li data-fr="Lancer l'installateur .exe, accepter la licence" data-en="Launch the .exe installer, accept the licence">Lancer l'installateur .exe, accepter la licence</li>
+        <li data-fr="Saisir email et mot de passe admin, laisser ports par défaut" data-en="Enter email and admin password, leave default ports">Saisir email et mot de passe admin, laisser ports par défaut</li>
+        <li data-fr="Patienter 5-10 min puis accéder à https://localhost" data-en="Wait 5–10 min then access https://localhost">Patienter 5-10 min puis accéder à <code>https://localhost</code></li>
+      </ol>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="180">
+      <h2 data-fr="Découverte automatique" data-en="Auto-discovery">Découverte automatique</h2>
+      <ol>
+        <li data-fr="Clic droit sur 'Probe locale' → 'Ajouter un groupe de découverte automatique'" data-en="Right-click 'Local Probe' → 'Add Auto-Discovery Group'">Clic droit sur "Probe locale" → "Ajouter un groupe de découverte automatique"</li>
+        <li data-fr="Entrer la plage IP (ex. 192.168.1.1 – 192.168.1.254)" data-en="Enter the IP range (e.g. 192.168.1.1 – 192.168.1.254)">Entrer la plage IP (ex. 192.168.1.1 – 192.168.1.254)</li>
+        <li data-fr="Lancer la découverte → PRTG scanne et crée automatiquement appareils + capteurs de base" data-en="Launch discovery → PRTG scans and automatically creates devices + basic sensors">Lancer la découverte → PRTG scanne et crée automatiquement appareils + capteurs de base</li>
+      </ol>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="220">
+      <h2 data-fr="Capteurs essentiels" data-en="Essential sensors">Capteurs essentiels</h2>
+      <h3 data-fr="Capteur Ping" data-en="Ping sensor">Capteur Ping</h3>
+      <ol>
+        <li data-fr="Clic droit sur appareil → Ajouter capteur → rechercher 'Ping'" data-en="Right-click on device → Add sensor → search 'Ping'">Clic droit sur appareil → Ajouter capteur → rechercher "Ping"</li>
+        <li data-fr="Sélectionner 'Ping standard' → Valider" data-en="Select 'Standard Ping' → Confirm">Sélectionner "Ping standard" → Valider</li>
+        <li data-fr="Vert = OK, Rouge = hors ligne" data-en="Green = OK, Red = offline">Vert = OK, Rouge = hors ligne</li>
+      </ol>
+      <h3 data-fr="Trafic ports fibres (switch)" data-en="Fibre port traffic (switch)">Trafic ports fibres (switch)</h3>
+      <ol>
+        <li data-fr="Activer SNMP sur le switch (communauté 'public')" data-en="Enable SNMP on the switch (community 'public')">Activer SNMP sur le switch (communauté "public")</li>
+        <li data-fr="Ajouter capteur → 'SNMP Traffic' → sélectionner le port fibre" data-en="Add sensor → 'SNMP Traffic' → select the fibre port">Ajouter capteur → "SNMP Traffic" → sélectionner le port fibre</li>
+        <li data-fr="Surveille bande passante entrante / sortante / totale" data-en="Monitors inbound / outbound / total bandwidth">Surveille bande passante entrante / sortante / totale</li>
+      </ol>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="260">
+      <h2 data-fr="Alertes par email" data-en="Email alerts">Alertes par email</h2>
+      <ol>
+        <li data-fr="Configuration → Notifications → Créer notification 'Email'" data-en="Configuration → Notifications → Create 'Email' notification">Configuration → Notifications → Créer notification "Email"</li>
+        <li data-fr="Configurer SMTP (ex. Gmail : smtp.gmail.com, port 587, TLS)" data-en="Configure SMTP (e.g. Gmail: smtp.gmail.com, port 587, TLS)">Configurer SMTP (ex. Gmail : smtp.gmail.com, port 587, TLS)</li>
+        <li data-fr="Créer un déclencheur sur le capteur : Down → Sévérité Haute → Email" data-en="Create trigger on sensor: Down → High Severity → Email">Créer un déclencheur sur le capteur : Down → Sévérité Haute → Email</li>
+        <li data-fr="Tester l'alerte pour vérifier la réception" data-en="Test the alert to verify receipt">Tester l'alerte pour vérifier la réception</li>
+      </ol>
+    </div>
+
+    <div class="glass detail-card ios-anim" data-d="300">
+      <h2 data-fr="Bonnes pratiques" data-en="Best practices">Bonnes pratiques</h2>
+      <ul>
+        <li data-fr="Toujours ajouter un capteur Ping par appareil" data-en="Always add a Ping sensor per device">Toujours ajouter un capteur Ping par appareil</li>
+        <li data-fr="Nommer clairement groupes, appareils et capteurs" data-en="Name groups, devices and sensors clearly">Nommer clairement groupes, appareils et capteurs</li>
+        <li data-fr="Limiter les capteurs inutiles (Free : max 100)" data-en="Limit unnecessary sensors (Free: max 100)">Limiter les capteurs inutiles (Free : max 100)</li>
+        <li data-fr="Coupler PRTG avec GLPI pour tickets automatisés" data-en="Pair PRTG with GLPI for automated tickets">Coupler PRTG avec GLPI pour tickets automatisés</li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <span>© 2026 Ioen Le Gourlay-Denis</span>
+    <a href="mentions-legales.html" data-fr="Mentions légales" data-en="Legal notice">Mentions légales</a>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
